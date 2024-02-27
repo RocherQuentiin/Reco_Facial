@@ -46,7 +46,17 @@ while choixUtilisateur :
 cascade_visage = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 camera = cv2.VideoCapture(0) # 0 pour 'built-in' caméra, 1 pour caméra externe
+user = {}
+test = "\n"
+setNom = list(set(noms))
+for i in range(len(setNom)):
+    user[i] = setNom[i]
+    test += str(i) + "." + setNom[i] + "\n"
 
+numAdmin = list(map(int, input("Qui sont admis : " + test).split()))
+admin = []
+for num in numAdmin:
+    admin.append(user[num])
 while True:
     
     ret, trame = camera.read()
