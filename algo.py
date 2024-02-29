@@ -20,15 +20,17 @@ print('Shape of visages matrix --> ', visages.shape)
 N = len(noms)
 
 
+# Attention, pour la régression logistique, les images doivent être applaties (flattened) en dimension 1
+N = len(noms)
+
+
 while True:
-    choix = 5
-    break
-    choix = input("Rentrer 1,2 ou 3 : \n" +"1. algo de logistique regression\n" + "2. algo d'abres de decision\n" + "3. algo de k-NN \n" )
+    choix = input("Rentrer 1,2,3,4 ou 5 : \n" +"1. algo de logistique regression\n" + "2. algo d'abres de decision\n" + "3. algo de k-NN \n" + "4. Résaux de neuronne Dense\n" + "5. réseaux de neurones convolutionnels\n" )
     try:
         choix = int(choix)
     except ValueError:
         print('Choix invalide !')
-    if 1 <= choix <= 4:
+    if 1 <= choix <= 5:
         break
     print('Choix invalide !')
 
