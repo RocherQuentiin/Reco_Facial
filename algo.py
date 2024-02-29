@@ -6,6 +6,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 
+from algo_nn import ConvNetClassifier, DenseNetClassifier
+
 with open('data/visages.pkl', 'rb') as fh:
     visages = pickle.load(fh)
 
@@ -17,35 +19,51 @@ print('Shape of visages matrix --> ', visages.shape)
 # Attention, pour la régression logistique, les images doivent être applaties (flattened) en dimension 1
 N = len(noms)
 
-visages = visages.reshape(N, -1)
-algoUtile = input("Entrez le numéros de  l'algo que vous voulez utiliser : \n" +"1. algo de logistique regression\n" + "2. algo d'abres de decision\n" + "3. algo de k-NN \n" )
 
-choixUtilisateur = True
-while choixUtilisateur :
-    if algoUtile == "1" :
-        algores = LogisticRegression(max_iter=1000)
-        algores.fit(visages, noms)
-        titre = "Regression logistique"
-        choixUtilisateur = False
-        
-    elif algoUtile == "2" :
-        algores = DecisionTreeClassifier(random_state=0)
-        algores.fit(visages, noms)
-        titre = "Arbres de decision"
-        choixUtilisateur = False
-        
-    elif algoUtile == "3" :
-        algores = KNeighborsClassifier(n_neighbors=4)
-        algores.fit(visages, noms)
-        titre = "k-NN"
-        choixUtilisateur = False
-    else :
-        algoUtile = input("ERREUR rentrer 1,2 ou 3 : \n" +"1. algo de logistique regression\n" + "2. algo d'abres de decision\n" + "3. algo de k-NN \n" )
+while True:
+    choix = 5
+    break
+    choix = input("Rentrer 1,2 ou 3 : \n" +"1. algo de logistique regression\n" + "2. algo d'abres de decision\n" + "3. algo de k-NN \n" )
+    try:
+        choix = int(choix)
+    except ValueError:
+        print('Choix invalide !')
+    if 1 <= choix <= 4:
+        break
+    print('Choix invalide !')
+
+if choix <= 4:
+    visages = visages.reshape(N, -1)
+
+if choix == 1 :
+    algores = LogisticRegression(max_iter=1000)
+    algores.fit(visages, noms)
+    titre = "Regression logistique"
+      
+elif choix == 2 :
+    algores = DecisionTreeClassifier(random_state=0)
+    algores.fit(visages, noms)
+    titre = "Arbres de decision"
+    
+elif choix == 3 :
+    algores = KNeighborsClassifier(n_neighbors=4)
+    algores.fit(visages, noms)
+    titre = "k-NN"
+
+elif choix == 4:
+    algores = DenseNetClassifier(noms)
+    algores.fit(visages, noms)
+    titre = "DenseNet"
+
+elif choix == 5:
+    algores = ConvNetClassifier(noms)
+    algores.fit(visages, noms)
+    titre = "ConvNet"
 
 
 cascade_visage = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-camera = cv2.VideoCapture(0) # 0 pour 'built-in' caméra, 1 pour caméra externe
+camera = cv2.VideoCapture(1) # 0 pour 'built-in' caméra, 1 pour caméra externe
 user = {}
 test = "\n"
 setNom = list(set(noms))
@@ -68,8 +86,11 @@ while True:
         for (x, y, l, h) in coordonnees_visage:
             
             visage = trame[y:y + h, x:x + l, :]
-            visage_redimensionne = cv2.resize(visage, (50, 50)).flatten().reshape(1,-1)
-            
+            visage_redimensionne = cv2.resize(visage, (50, 50))
+            if choix <= 4:
+                visage_redimensionne = visage_redimensionne.flatten().reshape(1,-1)
+            elif choix == 5:
+                visage_redimensionne = visage_redimensionne.reshape(1, 50, 50, 3)
             texte = algores.predict(visage_redimensionne)
             
             if texte[0] == "Quentin":
