@@ -2,7 +2,7 @@ import numpy as np
 import keras
 from sklearn.preprocessing import LabelEncoder
 from keras.models import Sequential
-from keras.layers import Dense, Conv2D , MaxPool2D , Flatten , Dropout 
+from keras.layers import Dense, Conv2D, MaxPool2D, Flatten, Dropout
 from keras.losses import SparseCategoricalCrossentropy
 from keras.optimizers import Adam
 

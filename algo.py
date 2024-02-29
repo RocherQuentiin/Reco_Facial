@@ -63,7 +63,7 @@ elif choix == 5:
 
 cascade_visage = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-camera = cv2.VideoCapture(1) # 0 pour 'built-in' caméra, 1 pour caméra externe
+camera = cv2.VideoCapture(0) # 0 pour 'built-in' caméra, 1 pour caméra externe
 user = {}
 test = "\n"
 setNom = list(set(noms))
