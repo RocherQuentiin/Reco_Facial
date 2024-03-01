@@ -40,7 +40,9 @@ ainsi que de pouvoir determiner qui parmis les gens inscrit dans le dataset sont
 
 # Documentation de la classe ConvNetClassifier
 Pour cette classe nous avons fait le choix de faire un modèle de réseaux de neuronnes avec deux couches. La première couche 
-contient 32 neuronnes et la deuxième en contient 16.
+contient 32 neuronnes et la deuxième en contient 16. Il est important de comprendre qui la dernière couche du réseaux de neuronnes
+n'est autre que qu'une couche de type DenseNetClassifier qui contient 32 neuronnes. Dans ce réseau de neuronnes nous utilisons aussi la Régression linéaire.
+
 Cette classe contient trois fonctions, la première **init** nous permet d'initialiser notre réseau de neuronnes. La deuxième fonction 
 **fit** permet d'entrainer notre réseau de neuronnes. Et enfin la fonction **predict** qui nous permet de prédire à qui sont les visages.
 
