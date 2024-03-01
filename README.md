@@ -25,3 +25,28 @@ Le premier notebook implémente la création du **dataset** et le second code l'
 4. Documentez-vous sur les **réseaux de neurones** et essayez d'implémenter et d'intégrer un algorithme de classification par réseaux de neurones.
 5. Si vous avez le temps, documentez-vous sur les **réseaux de neurones convolutionnels** (qui sont spécialisés dans le traitement des images) et essayez d'implémenter et d'intégrer un algorithme de classification par réseaux de neurones convolutionnels.
 6. Rendez votre projet sous la forme d'un **répertoire GitHub** .  Votre  repo contiendra un **fichier README** (md file) et plusieurs **notebooks jupyter** (ipynb files) propres et commentés  qui présentent votre projet.
+
+## Instalation des librairis pour le réseau de neuronnes
+````shell
+  python.exe -m pip install --upgrade pip
+  python.exe -m pip install keras 
+  python.exe -m pip install tensorflow 
+````
+
+# Ecplication du code
+Nous avons faits un fichier jupiter pour chaque modèle que nous avons utilisé. Mais nous avons aussi fait un fichir **py**
+qui synthétise tous notre code pour éviter de trop le dupliquer. Dans celui-ci on peut choisir quelle méthode nous voulons utiliser
+ainsi que de pouvoir determiner qui parmis les gens inscrit dans le dataset sont admis ou non.
+
+# Documentation de la classe ConvNetClassifier
+Pour cette classe nous avons fait le choix de faire un modèle de réseaux de neuronnes avec deux couches. La première couche 
+contient 32 neuronnes et la deuxième en contient 16.
+Cette classe contient trois fonctions, la première **init** nous permet d'initialiser notre réseau de neuronnes. La deuxième fonction 
+**fit** permet d'entrainer notre réseau de neuronnes. Et enfin la fonction **predict** qui nous permet de prédire à qui sont les visages.
+
+
+# Annexes
+Voici les liens qui nous on permis de réaliser notre réseau de neuronnes à l'aide de la librairi keras.
+- [La base de la librairi keras](https://keras.io/examples/vision/image_classification_from_scratch/)
+- [application de la librairi avec la reconnaissance d'image](https://www.analyticsvidhya.com/blog/2020/10/create-image-classification-model-python-keras/)
+- [Problème rencontré par Angelo lors de l'instalation de tenserflow](https://stackoverflow.com/a/76085534)
