@@ -38,12 +38,18 @@ Nous avons faits un fichier jupiter pour chaque modèle que nous avons utilisé.
 qui synthétise tous notre code pour éviter de trop le dupliquer. Dans celui-ci on peut choisir quelle méthode nous voulons utiliser
 ainsi que de pouvoir determiner qui parmis les gens inscrit dans le dataset sont admis ou non.
 
+# Documentation de la classe DenseNetClassifier
+Pour cette classe nous avonc fait le choix de faire un modèle de résaux de neuronnes  dense avec 3 couche de neuronnes et une couche de sortie avec un nombre de neurone égale au nombre de nom de personne différente enregistrer.   
+la première couche possède 512 neuronne, la deuxième en contient 64, puis la troisième en contient 32.
+Cette classe contient trois fonctions, la première **init** nous permet d'initialiser notre réseau de neuronnes dense. La deuxième fonction 
+**fit** permet d'entrainer notre réseau de neuronnes. Et enfin la fonction **predict** qui nous permet de prédire à qui sont les visages.
+
+
 # Documentation de la classe ConvNetClassifier
 Pour cette classe nous avons fait le choix de faire un modèle de réseaux de neuronnes avec deux couches. La première couche 
 contient 32 neuronnes et la deuxième en contient 16.
 Cette classe contient trois fonctions, la première **init** nous permet d'initialiser notre réseau de neuronnes. La deuxième fonction 
 **fit** permet d'entrainer notre réseau de neuronnes. Et enfin la fonction **predict** qui nous permet de prédire à qui sont les visages.
-
 
 # Annexes
 Voici les liens qui nous on permis de réaliser notre réseau de neuronnes à l'aide de la librairi keras.
