@@ -38,13 +38,26 @@ Nous avons faits un fichier jupiter pour chaque modèle que nous avons utilisé.
 qui synthétise tous notre code pour éviter de trop le dupliquer. Dans celui-ci on peut choisir quelle méthode nous voulons utiliser
 ainsi que de pouvoir determiner qui parmis les gens inscrit dans le dataset sont admis ou non.
 
+# Documentation de la classe DenseNetClassifier
+Pour cette classe nous avonc fait le choix de faire un modèle de résaux de neuronnes  dense avec 3 couche de neuronnes et une couche de sortie avec un nombre de neurone égale au nombre de nom de personne différente enregistrer.   
+la première couche possède 512 neuronne, la deuxième en contient 64, puis la troisième en contient 32.
+Cette classe contient trois fonctions, la première **init** nous permet d'initialiser notre réseau de neuronnes dense. La deuxième fonction 
+**fit** permet d'entrainer notre réseau de neuronnes. Et enfin la fonction **predict** qui nous permet de prédire à qui sont les visages.
+
+
 # Documentation de la classe ConvNetClassifier
 Pour cette classe nous avons fait le choix de faire un modèle de réseaux de neuronnes avec deux couches. La première couche 
-contient 32 neuronnes et la deuxième en contient 16.
+contient 32 neuronnes et la deuxième en contient 16. Il est important de comprendre qui la dernière couche du réseaux de neuronnes
+n'est autre que qu'une couche de type DenseNetClassifier qui contient 32 neuronnes. Dans ce réseau de neuronnes nous utilisons aussi la Régression linéaire.
+
 Cette classe contient trois fonctions, la première **init** nous permet d'initialiser notre réseau de neuronnes. La deuxième fonction 
 **fit** permet d'entrainer notre réseau de neuronnes. Et enfin la fonction **predict** qui nous permet de prédire à qui sont les visages.
 
 
+# Teste de fonctionnement
+Lors de nos différents tests, nous avons pu voir que le réseau de neurones convolutionnel donnait de meilleurs résultats avec un entraînement de 500 epochs ainsi qu'avec un jeu de données d'au moins 40 photos par personne. Cela permet au réseau de mieux s'entraîner sur chaque individu.
+
+Nous avons également remarqué, pour les différentes méthodes autres que les réseaux de neurones, qu'elles étaient assez efficaces pour prédire avec précision deux personnes différentes. Cependant, lorsque nous ajoutons plus de deux personnes dans le jeu de données, cela ne lui permet pas de bien prédire les individus.
 # Annexes
 Voici les liens qui nous on permis de réaliser notre réseau de neuronnes à l'aide de la librairi keras.
 - [La base de la librairi keras](https://keras.io/examples/vision/image_classification_from_scratch/)
