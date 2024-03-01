@@ -32,3 +32,16 @@ Le premier notebook implémente la création du **dataset** et le second code l'
   python.exe -m pip install keras 
   python.exe -m pip install tensorflow 
 ````
+
+# Documentation de la classe ConvNetClassifier
+Pour cette classe nous avons fait le choix de faire un modèle de réseaux de neuronnes avec deux couches. La première couche 
+contient 32 neuronnes et la deuxième en contient 16.
+Cette classe contient trois fonctions, la première **init** nous permet d'initialiser notre réseau de neuronnes. La deuxième fonction 
+**fit** permet d'entrainer notre réseau de neuronnes. Et enfin la fonction **predict** qui nous permet de prédire à qui sont les visages.
+
+
+# Annexes
+Voici les liens qui nous on permis de réaliser notre réseau de neuronnes à l'aide de la librairi keras.
+- [La base de la librairi keras](https://keras.io/examples/vision/image_classification_from_scratch/)
+- [application de la librairi avec la reconnaissance d'image](https://www.analyticsvidhya.com/blog/2020/10/create-image-classification-model-python-keras/)
+- [Problème rencontré par Angelo lors de l'instalation de tenserflow](https://stackoverflow.com/a/76085534)
