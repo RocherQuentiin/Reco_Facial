@@ -99,7 +99,7 @@ while True:
                 data = texte[0] + " admis"
                 col = (0, 255, 0)
             else:
-                col = (255, 255, 0)
+                col = (255, 0, 0)
                 data = texte[0] + " non admis"
             
             cv2.putText(trame, data, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 2)
