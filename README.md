@@ -51,6 +51,11 @@ contient 32 neuronnes et la deuxième en contient 16.
 Cette classe contient trois fonctions, la première **init** nous permet d'initialiser notre réseau de neuronnes. La deuxième fonction 
 **fit** permet d'entrainer notre réseau de neuronnes. Et enfin la fonction **predict** qui nous permet de prédire à qui sont les visages.
 
+
+# Teste de fonctionnement
+Lors de nos différents tests, nous avons pu voir que le réseau de neurones convolutionnel donnait de meilleurs résultats avec un entraînement de 500 epochs ainsi qu'avec un jeu de données d'au moins 40 photos par personne. Cela permet au réseau de mieux s'entraîner sur chaque individu.
+
+Nous avons également remarqué, pour les différentes méthodes autres que les réseaux de neurones, qu'elles étaient assez efficaces pour prédire avec précision deux personnes différentes. Cependant, lorsque nous ajoutons plus de deux personnes dans le jeu de données, cela ne lui permet pas de bien prédire les individus.
 # Annexes
 Voici les liens qui nous on permis de réaliser notre réseau de neuronnes à l'aide de la librairi keras.
 - [La base de la librairi keras](https://keras.io/examples/vision/image_classification_from_scratch/)
