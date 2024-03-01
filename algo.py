@@ -95,11 +95,11 @@ while True:
                 visage_redimensionne = visage_redimensionne.reshape(1, 50, 50, 3)
             texte = algores.predict(visage_redimensionne)
             
-            if texte[0] == "Quentin":
+            if texte[0] in admin:
                 data = texte[0] + " admis"
-                col = (255, 0, 0)
-            else:
                 col = (0, 255, 0)
+            else:
+                col = (255, 255, 0)
                 data = texte[0] + " non admis"
             
             cv2.putText(trame, data, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 2)
