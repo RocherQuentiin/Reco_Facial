@@ -33,6 +33,11 @@ Le premier notebook implémente la création du **dataset** et le second code l'
   python.exe -m pip install tensorflow 
 ````
 
+# Ecplication du code
+Nous avons faits un fichier jupiter pour chaque modèle que nous avons utilisé. Mais nous avons aussi fait un fichir **py**
+qui synthétise tous notre code pour éviter de trop le dupliquer. Dans celui-ci on peut choisir quelle méthode nous voulons utiliser
+ainsi que de pouvoir determiner qui parmis les gens inscrit dans le dataset sont admis ou non.
+
 # Documentation de la classe ConvNetClassifier
 Pour cette classe nous avons fait le choix de faire un modèle de réseaux de neuronnes avec deux couches. La première couche 
 contient 32 neuronnes et la deuxième en contient 16.
