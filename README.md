@@ -1,3 +1,6 @@
+ROCHER Quentin 
+LARIVIERE Angelo
+
 # SAÉ: Modélisation mathématique<br>Reconnaissance faciale en temps réel
 
 <img src="moi.png" width="400" height="auto" />
